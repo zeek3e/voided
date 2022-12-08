@@ -1,385 +1,439 @@
+-- Gui to Lua
+-- Version: 3.2
 
+-- Instances:
 
 local ScreenGui = Instance.new("ScreenGui")
 local main = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
-local v = Instance.new("TextLabel")
-local oided = Instance.new("TextLabel")
-local loading = Instance.new("TextLabel")
+local top = Instance.new("Frame")
 local UICorner_2 = Instance.new("UICorner")
+local words = Instance.new("TextLabel")
+local words2 = Instance.new("TextLabel")
+local words3 = Instance.new("TextLabel")
+local load = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local unload = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
 
-
+--Properties:
 
 ScreenGui.Parent = game.CoreGui
 
 main.Name = "main"
 main.Parent = ScreenGui
-main.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
-main.Position = UDim2.new(0.449780971, 0, 0.376090109, 0)
-main.Size = UDim2.new(0, 124, 0, 125)
+main.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+main.Position = UDim2.new(0.38720274, 0, 0.917514503, 0)
+main.Size = UDim2.new(0, 277, 0, 20)
 
-UICorner.CornerRadius = UDim.new(0, 99)
+UICorner.CornerRadius = UDim.new(0, 4)
 UICorner.Parent = main
 
-v.Name = "v"
-v.Parent = main
-v.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-v.BackgroundTransparency = 1.000
-v.Position = UDim2.new(0.136934012, 0, 0.292398244, 0)
-v.Size = UDim2.new(0, 54, 0, 44)
-v.Font = Enum.Font.SourceSansBold
-v.Text = "V"
-v.TextColor3 = Color3.fromRGB(66, 131, 0)
-v.TextSize = 30.000
+top.Name = "top"
+top.Parent = main
+top.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+top.Position = UDim2.new(-0.0016860686, 0, -1.03248596, 0)
+top.Size = UDim2.new(0, 102, 0, 18)
 
-oided.Name = "oided"
-oided.Parent = main
-oided.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-oided.BackgroundTransparency = 1.000
-oided.Position = UDim2.new(0.298783898, 0, 0.292398214, 0)
-oided.Size = UDim2.new(0, 70, 0, 50)
-oided.Font = Enum.Font.SourceSansBold
-oided.Text = "OIDED"
-oided.TextColor3 = Color3.fromRGB(255, 255, 255)
-oided.TextSize = 20.000
+UICorner_2.CornerRadius = UDim.new(0, 4)
+UICorner_2.Parent = top
 
-loading.Name = "loading"
-loading.Parent = main
-loading.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
-loading.Position = UDim2.new(-0.0910816789, 0, 0.902860403, 0)
-loading.Size = UDim2.new(0, 149, 0, 20)
-loading.Font = Enum.Font.GothamBold
-loading.Text = "Loading..."
-loading.TextColor3 = Color3.fromRGB(255, 255, 255)
-loading.TextSize = 16.000
+words.Name = "words"
+words.Parent = main
+words.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+words.BackgroundTransparency = 1.000
+words.Position = UDim2.new(0.118055552, 0, -1.08248591, 0)
+words.Size = UDim2.new(0, 49, 0, 19)
+words.Font = Enum.Font.SourceSansBold
+words.Text = "oided"
+words.TextColor3 = Color3.fromRGB(255, 255, 255)
+words.TextSize = 18.000
 
-UICorner_2.CornerRadius = UDim.new(0, 5)
-UICorner_2.Parent = loading
+words2.Name = "words2"
+words2.Parent = main
+words2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+words2.BackgroundTransparency = 1.000
+words2.Position = UDim2.new(0.0416666679, 0, -1.03248596, 0)
+words2.Size = UDim2.new(0, 49, 0, 18)
+words2.Font = Enum.Font.SourceSansBold
+words2.Text = "V"
+words2.TextColor3 = Color3.fromRGB(59, 176, 0)
+words2.TextSize = 20.000
+
+words3.Name = "words3"
+words3.Parent = main
+words3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+words3.BackgroundTransparency = 1.000
+words3.Position = UDim2.new(0.00947190728, 0, 0.0175140388, 0)
+words3.Size = UDim2.new(0, 108, 0, 19)
+words3.Font = Enum.Font.SourceSansBold
+words3.Text = "Loading please wait"
+words3.TextColor3 = Color3.fromRGB(255, 255, 255)
+words3.TextSize = 15.000
+
+load.Name = "load"
+load.Parent = main
+load.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
+load.Position = UDim2.new(0.426437199, 0, 0.122238159, 0)
+load.Size = UDim2.new(0, 152, 0, 14)
+load.Visible = false
+load.Font = Enum.Font.SourceSansBold
+load.Text = "Load Ui"
+load.TextColor3 = Color3.fromRGB(255, 255, 255)
+load.TextSize = 18.000
+
+UICorner_3.CornerRadius = UDim.new(0, 4)
+UICorner_3.Parent = load
+
+unload.Name = "unload"
+unload.Parent = main
+unload.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+unload.Position = UDim2.new(0.62860328, 0, -1.08248591, 0)
+unload.Size = UDim2.new(0, 102, 0, 19)
+unload.Font = Enum.Font.SourceSansBold
+unload.Text = "Unload"
+unload.TextColor3 = Color3.fromRGB(255, 255, 255)
+unload.TextSize = 18.000
+
+UICorner_4.CornerRadius = UDim.new(0, 4)
+UICorner_4.Parent = unload
 
 -- Scripts:
+--load
+local function XKVCBFO_fake_script() -- load.LocalScript 
+	local script = Instance.new('LocalScript', load)
 
-local function CFALGL_fake_script() -- main.LocalScript 
-	local script = Instance.new('LocalScript', main)
+	wait (4)
+	script.Parent.Parent.load.Visible = true
+wait (.25)
+words3.Text = "Loaded"
 
-	wait (6.00)
-	loading.Text = "Loaded"
-	wait (2.00)
-	script.Parent.Parent.main.Visible = false
+	
+	--unload
+	script.Parent.MouseButton1Click:Connect(function()
+		task.wait (2.25)	
+		script.Parent.Parent.Visible = false
+		task.wait (1.33)
+		local lib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/Vape.txt")()
+
+		local win = lib:Window("Voided Private Autoheal",Color3.fromRGB(22, 20, 224), Enum.KeyCode.RightControl)
+
+		local tab = win:Tab("Autoheal")
+		tab:Button("Force reset to stop functions", function()
+			game.Players.LocalPlayer.Character.Humanoid.Health = 0
+		end)
+
+		tab:Label("Keybind = (Y)")
+
+		tab:Button("Autoheal Bloodfruit", function()
+
+			local toggled
+
+			game:GetService('UserInputService').InputBegan:Connect(
+			function(input)
+				if (input.KeyCode == Enum.KeyCode.Y) then
+					toggled = not toggled
+
+				end
+			end
+			)
+
+			while (wait()) do
+				if (toggled) then
+					task.wait(.01)
+					if game.Players.LocalPlayer.Character.Humanoid.Health == 100 then
+
+					else 
+						local ohString1 = "Bloodfruit"
+						game:GetService("ReplicatedStorage").Events.Dx1234:FireServer(ohString1)
+
+
+						if game.Players.LocalPlayer.Character.Humanoid.Health <= 0 then break 
+						end
+					end
+				end
+			end
+		end)
+
+		tab:Button("Autoheal Bluefruit", function()
+
+			local toggled
+
+			game:GetService('UserInputService').InputBegan:Connect(
+			function(input)
+				if (input.KeyCode == Enum.KeyCode.Y) then
+					toggled = not toggled
+
+				end
+			end
+			)
+
+			while (wait()) do
+				if (toggled) then
+					task.wait(.01)
+					if game.Players.LocalPlayer.Character.Humanoid.Health == 100 then
+
+					else 
+						local ohString1 = "Bluefruit"
+						game:GetService("ReplicatedStorage").Events.Dx1234:FireServer(ohString1)
+
+
+						if game.Players.LocalPlayer.Character.Humanoid.Health <= 0 then break 
+						end
+					end
+				end
+			end
+		end)
+
+		tab:Button("Autoheal Berrys", function()
+
+			local toggled
+
+			game:GetService('UserInputService').InputBegan:Connect(
+			function(input)
+				if (input.KeyCode == Enum.KeyCode.Y) then
+					toggled = not toggled
+
+				end
+			end
+			)
+
+			while (wait()) do
+				if (toggled) then
+					task.wait(.01)
+					if game.Players.LocalPlayer.Character.Humanoid.Health == 100 then
+
+					else 
+						local ohString1 = "Berry"
+						game:GetService("ReplicatedStorage").Events.Dx1234:FireServer(ohString1)
+
+
+						if game.Players.LocalPlayer.Character.Humanoid.Health <= 0 then break 
+						end
+					end
+				end
+			end
+		end)
+
+		tab:Button("Autoheal Lemons", function()
+
+			local toggled
+
+			game:GetService('UserInputService').InputBegan:Connect(
+			function(input)
+				if (input.KeyCode == Enum.KeyCode.Y) then
+					toggled = not toggled
+
+				end
+			end
+			)
+
+			while (wait()) do
+				if (toggled) then
+					task.wait(.01)
+					if game.Players.LocalPlayer.Character.Humanoid.Health == 100 then
+
+					else 
+						local ohString1 = "Lemon"
+						game:GetService("ReplicatedStorage").Events.Dx1234:FireServer(ohString1)
+
+
+						if game.Players.LocalPlayer.Character.Humanoid.Health <= 0 then break 
+						end
+					end
+				end
+			end
+		end)
+
+
+		tab:Button("Autoeat Bloodfruit", function()
+
+			local toggled
+
+			game:GetService('UserInputService').InputBegan:Connect(
+			function(input)
+				if (input.KeyCode == Enum.KeyCode.Y) then
+					toggled = not toggled
+
+				end
+			end
+			)
+
+			while (wait()) do
+				if (toggled) then
+					task.wait(.01)
+					local ohString1 = "Bloodfruit"
+					game:GetService("ReplicatedStorage").Events.Dx1234:FireServer(ohString1)
+					if game.Players.LocalPlayer.Character.Humanoid.Health <= 0 then break 
+					end
+				end
+			end
+		end)
+
+		tab:Button("Autoeat Bluefruit", function()
+
+			local toggled
+
+			game:GetService('UserInputService').InputBegan:Connect(
+			function(input)
+				if (input.KeyCode == Enum.KeyCode.Y) then
+					toggled = not toggled
+
+				end
+			end
+			)
+
+			while (wait()) do
+				if (toggled) then
+					task.wait(.01)
+					local ohString1 = "Bluefruit"
+					game:GetService("ReplicatedStorage").Events.Dx1234:FireServer(ohString1)
+					if game.Players.LocalPlayer.Character.Humanoid.Health <= 0 then break 
+					end
+				end
+			end
+		end)
+
+		tab:Button("Autoeat Berrys", function()
+
+			local toggled
+
+			game:GetService('UserInputService').InputBegan:Connect(
+			function(input)
+				if (input.KeyCode == Enum.KeyCode.Y) then
+					toggled = not toggled
+
+				end
+			end
+			)
+
+			while (wait()) do
+				if (toggled) then
+					task.wait(.01)
+					local ohString1 = "Berry"
+					game:GetService("ReplicatedStorage").Events.Dx1234:FireServer(ohString1)
+					if game.Players.LocalPlayer.Character.Humanoid.Health <= 0 then break 
+					end
+				end
+			end
+		end)
+
+		tab:Button("Autoeat Lemons", function()
+
+			local toggled
+
+			game:GetService('UserInputService').InputBegan:Connect(
+			function(input)
+				if (input.KeyCode == Enum.KeyCode.Y) then
+					toggled = not toggled
+
+				end
+			end
+			)
+
+			while (wait()) do
+				if (toggled) then
+					task.wait(.01)
+					local ohString1 = "Lemon"
+					game:GetService("ReplicatedStorage").Events.Dx1234:FireServer(ohString1)
+					if game.Players.LocalPlayer.Character.Humanoid.Health <= 0 then break 
+					end
+				end
+			end
+		end)
+
+		local tab = win:Tab("Visuals")
+
+		tab:Button("120 FOV", function()
+			local FOV = 120
+			game.Workspace.Camera.FieldOfView = FOV
+		end)
+
+		tab:Button("Reset FOV", function()
+			local FOV = 65
+			game.Workspace.Camera.FieldOfView = FOV
+		end)
+
+
+
+		tab:Button("Antilag", function()
+			lib:Notification("Voided", "Antilag active", "Close")
+			local decalsyeeted = true 
+			local g = game
+			local w = g.Workspace
+			local l = g.Lighting
+			local t = w.Terrain
+			t.WaterWaveSize = 0
+			t.WaterWaveSpeed = 0
+			t.WaterReflectance = 0
+			t.WaterTransparency = 0
+			l.GlobalShadows = false
+			l.FogEnd = 9e9
+			l.Brightness = 0
+			settings().Rendering.QualityLevel = "Level01"
+			for i, v in pairs(g:GetDescendants()) do
+				if v:IsA("Part") or v:IsA("Union") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then
+					v.Material = "Plastic"
+					v.Reflectance = 0
+				elseif v:IsA("Decal") or v:IsA("Texture") and decalsyeeted then
+					v.Transparency = 1
+				elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
+					v.Lifetime = NumberRange.new(0)
+				elseif v:IsA("Explosion") then
+					v.BlastPressure = 1
+					v.BlastRadius = 1
+				elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") then
+					v.Enabled = false
+				elseif v:IsA("MeshPart") then
+					v.Material = "Plastic"
+					v.Reflectance = 0
+					v.TextureID = 10385902758728957
+				end
+			end
+			for i, e in pairs(l:GetChildren()) do
+				if e:IsA("BlurEffect") or e:IsA("SunRaysEffect") or e:IsA("ColorCorrectionEffect") or e:IsA("BloomEffect") or e:IsA("DepthOfFieldEffect") then
+					e.Enabled = false
+				end
+			end
+		end)
+
+
+		local tab = win:Tab("Extra")
+
+		tab:Button('Auto equip Void armor', function()
+			local ohString1 = "Void Shroud"
+			game:GetService("ReplicatedStorage").Events.Dx1234:FireServer(ohString1)
+			local ohString1 = "Void Chestplate"
+			game:GetService("ReplicatedStorage").Events.Dx1234:FireServer(ohString1)
+			local ohString1 = "Void Greaves"
+			game:GetService("ReplicatedStorage").Events.Dx1234:FireServer(ohString1)
+		end)
+
+		tab:Button("Auto equip God armor", function()
+			local ohString1 = "God Halo"
+			game:GetService("ReplicatedStorage").Events.Dx1234:FireServer(ohString1)
+			local ohString1 = "God Chestplate"
+			game:GetService("ReplicatedStorage").Events.Dx1234:FireServer(ohString1)
+			local ohString1 = "God Legs"
+			game:GetService("ReplicatedStorage").Events.Dx1234:FireServer(ohString1)
+		end)
+
+		tab:Button("Rejoin", function()
+			lib:Notification("Voided", "Rejoining", "Close")
+			wait (3)
+			lib:Notification("Voided", "Error", "Close")
+		end)
+	end)
+	end
+
+coroutine.wrap(XKVCBFO_fake_script)()
+local function YOTYTQJ_fake_script() -- unload.LocalScript 
+	local script = Instance.new('LocalScript', unload)
+
+	
+	script.Parent.MouseButton1Click:Connect(function()
+	task.wait (1.25)	
+	script.Parent.Parent.Visible = false
+	end)
 end
-coroutine.wrap(CFALGL_fake_script)()
-wait (8.00)
-
-local lib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/Vape.txt")()
-
-local win = lib:Window("Voided Private Autoheal",Color3.fromRGB(22, 20, 224), Enum.KeyCode.RightControl)
-
-local tab = win:Tab("Autoheal")
-tab:Button("Force reset to stop functions", function()
-game.Players.LocalPlayer.Character.Humanoid.Health = 0
-end)
-
-tab:Label("Keybind = (Y)")
-
-tab:Button("Autoheal Bloodfruit", function()
-
-local toggled
-
-game:GetService('UserInputService').InputBegan:Connect(
-  function(input)
-    if (input.KeyCode == Enum.KeyCode.Y) then
-      toggled = not toggled
-
-    end
-  end
-)
-
-while (wait()) do
-  if (toggled) then
-   task.wait(.01)
-if game.Players.LocalPlayer.Character.Humanoid.Health == 100 then
-    
-else 
-local ohString1 = "Bloodfruit"
-game:GetService("ReplicatedStorage").Events.Dx1234:FireServer(ohString1)
-
-
-if game.Players.LocalPlayer.Character.Humanoid.Health <= 0 then break 
-end
-end
-end
-end
-end)
-
-tab:Button("Autoheal Bluefruit", function()
-
-local toggled
-
-game:GetService('UserInputService').InputBegan:Connect(
-  function(input)
-    if (input.KeyCode == Enum.KeyCode.Y) then
-      toggled = not toggled
-
-    end
-  end
-)
-
-while (wait()) do
-  if (toggled) then
-    task.wait(.01)
-if game.Players.LocalPlayer.Character.Humanoid.Health == 100 then
-    
-else 
-local ohString1 = "Bluefruit"
-game:GetService("ReplicatedStorage").Events.Dx1234:FireServer(ohString1)
-
-
-if game.Players.LocalPlayer.Character.Humanoid.Health <= 0 then break 
-end
-end
-end
-end
-end)
-
-tab:Button("Autoheal Berrys", function()
-
-local toggled
-
-game:GetService('UserInputService').InputBegan:Connect(
-  function(input)
-    if (input.KeyCode == Enum.KeyCode.Y) then
-      toggled = not toggled
-
-    end
-  end
-)
-
-while (wait()) do
-  if (toggled) then
-    task.wait(.01)
-if game.Players.LocalPlayer.Character.Humanoid.Health == 100 then
-    
-else 
-local ohString1 = "Berry"
-game:GetService("ReplicatedStorage").Events.Dx1234:FireServer(ohString1)
-
-
-if game.Players.LocalPlayer.Character.Humanoid.Health <= 0 then break 
-end
-end
-end
-end
-end)
-
-tab:Button("Autoheal Lemons", function()
-
-local toggled
-
-game:GetService('UserInputService').InputBegan:Connect(
-  function(input)
-    if (input.KeyCode == Enum.KeyCode.Y) then
-      toggled = not toggled
-
-    end
-  end
-)
-
-while (wait()) do
-  if (toggled) then
-    task.wait(.01)
-if game.Players.LocalPlayer.Character.Humanoid.Health == 100 then
-    
-else 
-local ohString1 = "Lemon"
-game:GetService("ReplicatedStorage").Events.Dx1234:FireServer(ohString1)
-
-
-if game.Players.LocalPlayer.Character.Humanoid.Health <= 0 then break 
-end
-end
-end
-end
-end)
-
-
-tab:Button("Autoeat Bloodfruit", function()
-
-local toggled
-
-game:GetService('UserInputService').InputBegan:Connect(
-  function(input)
-    if (input.KeyCode == Enum.KeyCode.Y) then
-      toggled = not toggled
-
-    end
-  end
-)
-
-while (wait()) do
-  if (toggled) then
-    task.wait(.01)
-local ohString1 = "Bloodfruit"
-game:GetService("ReplicatedStorage").Events.Dx1234:FireServer(ohString1)
-if game.Players.LocalPlayer.Character.Humanoid.Health <= 0 then break 
-end
-end
-end
-end)
-
-tab:Button("Autoeat Bluefruit", function()
-
-local toggled
-
-game:GetService('UserInputService').InputBegan:Connect(
-  function(input)
-    if (input.KeyCode == Enum.KeyCode.Y) then
-      toggled = not toggled
-
-    end
-  end
-)
-
-while (wait()) do
-  if (toggled) then
-    task.wait(.01)
-local ohString1 = "Bluefruit"
-game:GetService("ReplicatedStorage").Events.Dx1234:FireServer(ohString1)
-if game.Players.LocalPlayer.Character.Humanoid.Health <= 0 then break 
-end
-end
-end
-end)
-
-tab:Button("Autoeat Berrys", function()
-
-local toggled
-
-game:GetService('UserInputService').InputBegan:Connect(
-  function(input)
-    if (input.KeyCode == Enum.KeyCode.Y) then
-      toggled = not toggled
-
-    end
-  end
-)
-
-while (wait()) do
-  if (toggled) then
-    task.wait(.01)
-local ohString1 = "Berry"
-game:GetService("ReplicatedStorage").Events.Dx1234:FireServer(ohString1)
-if game.Players.LocalPlayer.Character.Humanoid.Health <= 0 then break 
-end
-end
-end
-end)
-
-tab:Button("Autoeat Lemons", function()
-
-local toggled
-
-game:GetService('UserInputService').InputBegan:Connect(
-  function(input)
-    if (input.KeyCode == Enum.KeyCode.Y) then
-      toggled = not toggled
-
-    end
-  end
-)
-
-while (wait()) do
-  if (toggled) then
-    task.wait(.01)
-local ohString1 = "Lemon"
-game:GetService("ReplicatedStorage").Events.Dx1234:FireServer(ohString1)
-if game.Players.LocalPlayer.Character.Humanoid.Health <= 0 then break 
-end
-end
-end
-end)
-
-local tab = win:Tab("Visuals")
-
-tab:Button("120 FOV", function()
-local FOV = 120
-game.Workspace.Camera.FieldOfView = FOV
-end)
-
-tab:Button("Reset FOV", function()
-local FOV = 65
-game.Workspace.Camera.FieldOfView = FOV
-end)
-
-
-
-tab:Button("Antilag", function()
-lib:Notification("Voided", "Antilag active", "Close")
-local decalsyeeted = true 
-local g = game
-local w = g.Workspace
-local l = g.Lighting
-local t = w.Terrain
-t.WaterWaveSize = 0
-t.WaterWaveSpeed = 0
-t.WaterReflectance = 0
-t.WaterTransparency = 0
-l.GlobalShadows = false
-l.FogEnd = 9e9
-l.Brightness = 0
-settings().Rendering.QualityLevel = "Level01"
-for i, v in pairs(g:GetDescendants()) do
-    if v:IsA("Part") or v:IsA("Union") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then
-        v.Material = "Plastic"
-        v.Reflectance = 0
-    elseif v:IsA("Decal") or v:IsA("Texture") and decalsyeeted then
-        v.Transparency = 1
-    elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
-        v.Lifetime = NumberRange.new(0)
-    elseif v:IsA("Explosion") then
-        v.BlastPressure = 1
-        v.BlastRadius = 1
-    elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") then
-        v.Enabled = false
-    elseif v:IsA("MeshPart") then
-        v.Material = "Plastic"
-        v.Reflectance = 0
-        v.TextureID = 10385902758728957
-    end
-end
-for i, e in pairs(l:GetChildren()) do
-    if e:IsA("BlurEffect") or e:IsA("SunRaysEffect") or e:IsA("ColorCorrectionEffect") or e:IsA("BloomEffect") or e:IsA("DepthOfFieldEffect") then
-        e.Enabled = false
-    end
-end
-end)
-
-
-local tab = win:Tab("Extra")
-
-tab:Button('Auto equip Void armor', function()
-local ohString1 = "Void Shroud"
-game:GetService("ReplicatedStorage").Events.Dx1234:FireServer(ohString1)
-local ohString1 = "Void Chestplate"
-game:GetService("ReplicatedStorage").Events.Dx1234:FireServer(ohString1)
-local ohString1 = "Void Greaves"
-game:GetService("ReplicatedStorage").Events.Dx1234:FireServer(ohString1)
-end)
-
-tab:Button("Auto equip God armor", function()
-local ohString1 = "God Halo"
-game:GetService("ReplicatedStorage").Events.Dx1234:FireServer(ohString1)
-local ohString1 = "God Chestplate"
-game:GetService("ReplicatedStorage").Events.Dx1234:FireServer(ohString1)
-local ohString1 = "God Legs"
-game:GetService("ReplicatedStorage").Events.Dx1234:FireServer(ohString1)
-end)
-
-tab:Button("Rejoin", function()
-lib:Notification("Voided", "Rejoining", "Close")
-wait (3)
-   lib:Notification("Voided", "Error", "Close")
-end)
-
-
-
-
-
+coroutine.wrap(YOTYTQJ_fake_script)()
